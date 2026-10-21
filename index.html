@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Sign in to Local Reviewer."
+    />
+    <title>Sign in · Local Reviewer</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/auth.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <main class="login-page">
+      <a class="brand" href="./index.html" aria-label="Local Reviewer home">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span>Local Reviewer</span>
+      </a>
+
+      <section class="login-card" aria-labelledby="login-title">
+        <p class="eyebrow" id="region-eyebrow">Welcome back</p>
+        <h1 id="login-title">Sign in to your workspace</h1>
+        <p class="login-copy">
+          Sign-in is available to users in Cameroon. Detect your region to
+          personalize this login page, then enter your account details.
+        </p>
+        <p class="location-attribution auth-location-attribution">
+          Location is checked with
+          <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
+            OpenStreetMap contributors
+          </a>
+        </p>
+
+        <div class="region-picker">
+          <button class="secondary-button" id="detect-region" type="button">
+            Detect my region
+          </button>
+          <span id="region-status" role="status" aria-live="polite">
+            Region styling is optional.
+          </span>
+        </div>
+
+        <div class="manual-region-picker" id="manual-region-picker" hidden>
+          <label for="region-preview">Preview a region</label>
+          <div class="manual-region-controls">
+            <select id="region-preview">
+              <option value="">Choose a region</option>
+              <option value="adamawa">Adamawa</option>
+              <option value="centre">Centre</option>
+              <option value="east">East</option>
+              <option value="far-north">Far North</option>
+              <option value="littoral">Littoral</option>
+              <option value="north">North</option>
+              <option value="northwest">Northwest</option>
+              <option value="west">West</option>
+              <option value="south">South</option>
+              <option value="southwest">Southwest</option>
+            </select>
+            <button class="secondary-button" id="preview-region" type="button">
+              Preview
+            </button>
+          </div>
+          <p class="location-note">
+            Preview only. Sign-in still verifies your actual location.
+          </p>
+        </div>
+
+        <form class="login-form" id="login-form" hidden>
+          <label for="email">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          />
+
+          <div class="form-options">
+            <label class="remember-option" for="remember">
+              <input id="remember" name="remember" type="checkbox" />
+              <span>Remember me</span>
+            </label>
+          </div>
+
+          <button type="submit">Sign in</button>
+        </form>
+        <p
+          class="form-message"
+          id="form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+        <p class="account-prompt">
+          New to Local Reviewer? <a href="register.html">Create an account</a>
+        </p>
+      </section>
+
+      <p class="page-note">Location is requested only when you choose to use it.</p>
+    </main>
+  </body>
+</html>

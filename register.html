@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A Local Reviewer account accessible only to Cameroonians to review and 
+      discuss changes that can be implemented on my vibecode and old coded apps."
+    />
+    <title>Create account · Local Reviewer</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/auth.js" defer></script>
+    <script src="js/register.js" defer></script>
+  </head>
+  <body>
+    <main class="login-page">
+      <a class="brand" href="./index.html" aria-label="Local Reviewer home">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span>Local Reviewer</span>
+      </a>
+
+      <section class="login-card" aria-labelledby="register-title">
+        <p class="eyebrow">Get started</p>
+        <h1 id="register-title">Create your account</h1>
+        <p class="login-copy">
+          Registration is available to users in Cameroon. Allow location
+          access to verify your country; coordinates are checked with
+          OpenStreetMap.
+        </p>
+        <p class="location-attribution auth-location-attribution">
+          Location lookup by
+          <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
+            OpenStreetMap contributors
+          </a>
+        </p>
+        <div class="region-picker">
+          <button class="secondary-button" id="detect-register-region" type="button">
+            Detect my region
+          </button>
+          <span id="register-region-status" role="status" aria-live="polite">
+            Region detection is required to register.
+          </span>
+        </div>
+        <div class="manual-region-picker" id="manual-register-region-picker" hidden>
+          <label for="register-region-preview">Preview a region</label>
+          <div class="manual-region-controls">
+            <select id="register-region-preview">
+              <option value="">Choose a region</option>
+              <option value="adamawa">Adamawa</option>
+              <option value="centre">Centre</option>
+              <option value="east">East</option>
+              <option value="far-north">Far North</option>
+              <option value="littoral">Littoral</option>
+              <option value="north">North</option>
+              <option value="northwest">Northwest</option>
+              <option value="west">West</option>
+              <option value="south">South</option>
+              <option value="southwest">Southwest</option>
+            </select>
+            <button class="secondary-button" id="preview-register-region" type="button">
+              Preview
+            </button>
+          </div>
+          <p class="location-note">
+            Preview only. Registration still verifies your actual location.
+          </p>
+        </div>
+
+        <form class="login-form" id="register-form">
+          <label for="email">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="At least 8 characters"
+            autocomplete="new-password"
+            minlength="8"
+            required
+          />
+
+          <label for="confirm-password">Confirm password</label>
+          <input
+            id="confirm-password"
+            name="confirm-password"
+            type="password"
+            placeholder="Enter your password again"
+            autocomplete="new-password"
+            minlength="8"
+            required
+          />
+
+          <button type="submit">Create account</button>
+          <p
+            class="form-message"
+            id="form-message"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+        <p class="account-prompt">
+          Already have an account? <a href="index.html">Sign in</a>
+        </p>
+      </section>
+
+      <p class="page-note">
+        Local demo only · Account details stay in this browser
+      </p>
+    </main>
+  </body>
+</html>

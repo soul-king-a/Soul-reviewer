@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Your Local Reviewer workspace."
+    />
+    <title>Reviewer workspace · Local Reviewer</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/auth.js" defer></script>
+    <script src="js/reviewer.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="reviewer.html" aria-label="Local Reviewer workspace">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span>Local Reviewer</span>
+      </a>
+      <div class="account-controls">
+        <span class="user-email" id="user-email"></span>
+        <button class="sign-out-button" id="sign-out" type="button">
+          Sign out
+        </button>
+      </div>
+    </header>
+
+    <main class="reviewer-workspace">
+      <section class="reviewer-intro" aria-labelledby="reviewer-title">
+        <p class="eyebrow">Your workspace</p>
+        <h1 id="reviewer-title">Ready when you are.</h1>
+        <p class="welcome-copy">
+          You’re signed in. This is your starting point for local reviews.
+        </p>
+      </section>
+
+      <div class="reviewer-grid">
+        <section class="review-panel" aria-label="Review tasks">
+          <div class="panel-header">
+            <h2>Review queue</h2>
+            <button type="button" class="secondary-button">New review</button>
+          </div>
+
+          <article class="review-card highlighted">
+            <div>
+              <p class="card-tag">Design review</p>
+              <h3>Landing page refresh</h3>
+            </div>
+            <span class="pill success">In progress</span>
+          </article>
+
+          <article class="review-card">
+            <div>
+              <p class="card-tag">Content review</p>
+              <h3>Product overview copy</h3>
+            </div>
+            <span class="pill warning">Pending</span>
+          </article>
+
+          <article class="review-card">
+            <div>
+              <p class="card-tag">Accessibility</p>
+              <h3>Navigation flow audit</h3>
+            </div>
+            <span class="pill neutral">Draft</span>
+          </article>
+        </section>
+
+        <aside class="profile-panel" aria-label="Profile overview">
+          <div class="profile-header">
+            <div class="avatar" aria-hidden="true">R</div>
+            <div>
+              <p class="profile-label">Profile</p>
+              <h2 id="profile-name">Reviewer</h2>
+            </div>
+          </div>
+
+          <div class="profile-info">
+            <div>
+              <span class="meta-label">Email</span>
+              <strong id="profile-email">user@example.com</strong>
+            </div>
+            <div>
+              <span class="meta-label">Internet presence</span>
+              <strong class="connection-status">
+                <span class="connection-dot" id="connection-dot" aria-hidden="true"></span>
+                <span id="connection-status" role="status" aria-live="polite">Checking…</span>
+              </strong>
+            </div>
+            <div class="location-info">
+              <span class="meta-label">Location</span>
+              <strong id="profile-location" role="status" aria-live="polite">Not shared</strong>
+              <span
+                class="location-coordinates"
+                id="location-coordinates"
+                aria-live="polite"
+              ></span>
+              <button class="location-button" id="detect-location" type="button">
+                Detect my location
+              </button>
+              <span class="location-note">
+                Clicking requests your location and sends coordinates to OpenStreetMap
+                to find the city and country. This app does not save them.
+              </span>
+              <span class="location-attribution">
+                Location data ©
+                <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
+                  OpenStreetMap contributors
+                </a>
+              </span>
+            </div>
+          </div>
+
+          <div class="stat-group">
+            <div class="stat-box">
+              <span>Reviewed</span>
+              <strong>18</strong>
+            </div>
+            <div class="stat-box">
+              <span>Pending</span>
+              <strong>5</strong>
+            </div>
+          </div>
+
+          <div class="profile-actions">
+            <button type="button" class="secondary-button">Edit profile</button>
+            <button type="button" class="primary-button">View reports</button>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>
