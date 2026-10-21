@@ -36,35 +36,100 @@
       </section>
 
       <div class="reviewer-grid">
-        <section class="review-panel" aria-label="Review tasks">
+        <section class="review-panel" aria-labelledby="review-report-title">
           <div class="panel-header">
-            <h2>Review queue</h2>
-            <button type="button" class="secondary-button">New review</button>
+            <h2 id="review-report-title">Report a problem</h2>
           </div>
 
-          <article class="review-card highlighted">
-            <div>
-              <p class="card-tag">Design review</p>
-              <h3>Landing page refresh</h3>
-            </div>
-            <span class="pill success">In progress</span>
-          </article>
+          <form class="review-form" id="review-form">
+            <p class="review-form-intro">
+              Tell us what is wrong and what you think should happen instead.
+            </p>
+            <label for="review-title">Short summary</label>
+            <input
+              id="review-title"
+              name="title"
+              type="text"
+              maxlength="120"
+              placeholder="e.g. The sign-in button does not respond"
+              required
+            />
 
-          <article class="review-card">
-            <div>
-              <p class="card-tag">Content review</p>
-              <h3>Product overview copy</h3>
-            </div>
-            <span class="pill warning">Pending</span>
-          </article>
+            <label for="review-email">Your email</label>
+            <input
+              id="review-email"
+              name="email"
+              type="email"
+              maxlength="254"
+              autocomplete="email"
+              required
+            />
+            <p class="review-form-note">
+              Your email address will be included in the report so the team can reply.
+            </p>
 
-          <article class="review-card">
-            <div>
-              <p class="card-tag">Accessibility</p>
-              <h3>Navigation flow audit</h3>
+            <div class="review-form-row">
+              <div>
+                <label for="review-category">Area</label>
+                <select id="review-category" name="category" required>
+                  <option value="Bug">Bug</option>
+                  <option value="Feature request">Feature request</option>
+                  <option value="Design">Design</option>
+                  <option value="Content">Content</option>
+                  <option value="Accessibility">Accessibility</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="review-priority">Priority</label>
+                <select id="review-priority" name="priority" required>
+                  <option value="Low">Low</option>
+                  <option value="Normal" selected>Normal</option>
+                  <option value="High">High</option>
+                  <option value="Blocking">Blocking</option>
+                </select>
+              </div>
             </div>
-            <span class="pill neutral">Draft</span>
-          </article>
+
+            <label for="review-problem">What is the problem?</label>
+            <textarea
+              id="review-problem"
+              name="problem"
+              rows="4"
+              maxlength="1500"
+              placeholder="Explain what is happening and who or what is affected."
+              required
+            ></textarea>
+
+            <label for="review-solution">What should happen instead?</label>
+            <textarea
+              id="review-solution"
+              name="solution"
+              rows="3"
+              maxlength="1000"
+              placeholder="Describe the result or solution you expect."
+              required
+            ></textarea>
+
+            <label for="review-steps">Steps to reproduce (optional)</label>
+            <textarea
+              id="review-steps"
+              name="steps"
+              rows="3"
+              maxlength="1000"
+              placeholder="1. Open the page…"
+            ></textarea>
+
+            <button class="primary-button" id="review-submit" type="submit">
+              Prepare email
+            </button>
+            <p class="review-form-note">
+              Your default email app will open with the report addressed to
+              songivan54@gmail.com. Press Send there to deliver it.
+            </p>
+            <p class="review-form-feedback" id="review-form-feedback" role="status" aria-live="polite"></p>
+          </form>
+
         </section>
 
         <aside class="profile-panel" aria-label="Profile overview">
