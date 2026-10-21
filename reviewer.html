@@ -9,6 +9,7 @@
     />
     <title>Reviewer workspace · Local Reviewer</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/preferences.js"></script>
     <script src="js/auth.js" defer></script>
     <script src="js/reviewer.js" defer></script>
   </head>
@@ -20,6 +21,9 @@
       </a>
       <div class="account-controls">
         <span class="user-email" id="user-email"></span>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+          Dark mode
+        </button>
         <button class="sign-out-button" id="sign-out" type="button">
           Sign out
         </button>
@@ -189,11 +193,76 @@
           </div>
 
           <div class="profile-actions">
-            <button type="button" class="secondary-button">Edit profile</button>
-            <button type="button" class="primary-button">View reports</button>
+            <button type="button" class="secondary-button" id="edit-profile">
+              Edit profile
+            </button>
+            <button type="button" class="primary-button" id="view-reports">
+              View reports
+            </button>
           </div>
         </aside>
       </div>
     </main>
+
+    <dialog class="workspace-dialog" id="profile-dialog" aria-labelledby="profile-dialog-title">
+      <form class="dialog-form" id="profile-form">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow">Profile settings</p>
+            <h2 id="profile-dialog-title">Edit profile</h2>
+          </div>
+          <button class="dialog-close" type="button" data-close-dialog aria-label="Close">
+            &times;
+          </button>
+        </div>
+        <label for="display-name">Display name</label>
+        <input
+          id="display-name"
+          name="displayName"
+          type="text"
+          maxlength="40"
+          autocomplete="name"
+          required
+        />
+        <p class="dialog-note">
+          Your email is the local account identifier and cannot be changed here.
+          This display name is saved only in this browser.
+        </p>
+        <p class="dialog-feedback" id="profile-feedback" role="status" aria-live="polite"></p>
+        <div class="dialog-actions">
+          <button class="secondary-button" type="button" data-close-dialog>Cancel</button>
+          <button class="primary-button" type="submit">Save profile</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="workspace-dialog reports-dialog" id="reports-dialog" aria-labelledby="reports-dialog-title">
+      <section class="dialog-form">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow">Saved in this browser</p>
+            <h2 id="reports-dialog-title">Report history</h2>
+          </div>
+          <button class="dialog-close" type="button" data-close-dialog aria-label="Close">
+            &times;
+          </button>
+        </div>
+        <p class="dialog-note">
+          This list records reports prepared for email. It cannot confirm that you
+          pressed Send or that a report was delivered.
+        </p>
+        <p class="reports-empty" id="reports-empty" hidden>
+          No reports have been prepared from this account in this browser yet.
+        </p>
+        <ol class="report-history" id="report-history"></ol>
+        <p class="dialog-feedback" id="reports-feedback" role="status" aria-live="polite"></p>
+        <div class="dialog-actions">
+          <button class="secondary-button" id="clear-reports" type="button">
+            Clear history
+          </button>
+          <button class="primary-button" type="button" data-close-dialog>Done</button>
+        </div>
+      </section>
+    </dialog>
   </body>
 </html>

@@ -64,11 +64,20 @@ is no backend or email service, the app cannot send reports automatically.
 - `index.html` and `register.html` provide sign-in and account creation.
 - `js/auth.js` handles browser-local accounts, authentication, region checks,
   and location lookup.
-- `reviewer.html` and `js/reviewer.js` provide the review form and prepare an
-  email for the user to send.
+- `reviewer.html` and `js/reviewer.js` provide the review form, prepare an
+  email for the user to send, and let users edit their display name and view
+  report history stored in their browser.
+- `js/preferences.js` provides the saved light/dark theme toggle and password
+  visibility controls used on sign-in and registration.
 - `css/styles.css` contains the responsive layout, regional color themes, and
   motion/accessibility styles.
 - `404.html` is the location-restriction page for users outside Cameroon.
 
-Profile statistics are demonstration content. Reports are not stored by the
-app; account data remains in the current browser.
+Profile statistics are demonstration content. Display names and a history of
+reports prepared for email are stored in the current browser under that
+account; they are not shared across browsers or devices. Report history only
+means an email was prepared and does not prove it was sent or delivered.
+
+The light/dark preference is saved in this browser and applies across the app.
+Password visibility buttons only reveal the current field on screen; they do
+not save or change its value.

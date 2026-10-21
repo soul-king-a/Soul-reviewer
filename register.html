@@ -10,11 +10,15 @@
     />
     <title>Create account · Local Reviewer</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/preferences.js"></script>
     <script src="js/auth.js" defer></script>
     <script src="js/register.js" defer></script>
   </head>
   <body>
     <main class="login-page">
+      <button class="theme-toggle page-theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+        Dark mode
+      </button>
       <a class="brand" href="./index.html" aria-label="Local Reviewer home">
         <span class="brand-mark" aria-hidden="true">R</span>
         <span>Local Reviewer</span>
@@ -79,26 +83,48 @@
           />
 
           <label for="password">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            placeholder="At least 8 characters"
-            autocomplete="new-password"
-            minlength="8"
-            required
-          />
+          <div class="password-field">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="At least 8 characters"
+              autocomplete="new-password"
+              minlength="8"
+              required
+            />
+            <button
+              class="password-toggle"
+              type="button"
+              data-password-toggle
+              aria-controls="password"
+              aria-pressed="false"
+            >
+              Show
+            </button>
+          </div>
 
           <label for="confirm-password">Confirm password</label>
-          <input
-            id="confirm-password"
-            name="confirm-password"
-            type="password"
-            placeholder="Enter your password again"
-            autocomplete="new-password"
-            minlength="8"
-            required
-          />
+          <div class="password-field">
+            <input
+              id="confirm-password"
+              name="confirm-password"
+              type="password"
+              placeholder="Enter your password again"
+              autocomplete="new-password"
+              minlength="8"
+              required
+            />
+            <button
+              class="password-toggle"
+              type="button"
+              data-password-toggle
+              aria-controls="confirm-password"
+              aria-pressed="false"
+            >
+              Show
+            </button>
+          </div>
 
           <button type="submit">Create account</button>
           <p
