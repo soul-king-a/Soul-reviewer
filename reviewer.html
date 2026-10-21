@@ -8,6 +8,11 @@
       content="Your Local Reviewer workspace."
     />
     <title>Reviewer workspace · Local Reviewer</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/preferences.js"></script>
     <script src="js/auth.js" defer></script>
@@ -22,9 +27,11 @@
       <div class="account-controls">
         <span class="user-email" id="user-email"></span>
         <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
-          Dark mode
+          <i class="bi bi-moon-stars" aria-hidden="true"></i>
+          <span data-theme-label>Dark mode</span>
         </button>
         <button class="sign-out-button" id="sign-out" type="button">
+          <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
           Sign out
         </button>
       </div>
@@ -42,7 +49,10 @@
       <div class="reviewer-grid">
         <section class="review-panel" aria-labelledby="review-report-title">
           <div class="panel-header">
-            <h2 id="review-report-title">Report a problem</h2>
+            <h2 id="review-report-title">
+              <i class="bi bi-chat-square-text" aria-hidden="true"></i>
+              Report a problem
+            </h2>
           </div>
 
           <form class="review-form" id="review-form">
@@ -125,6 +135,7 @@
             ></textarea>
 
             <button class="primary-button" id="review-submit" type="submit">
+              <i class="bi bi-envelope" aria-hidden="true"></i>
               Prepare email
             </button>
             <p class="review-form-note">
@@ -147,18 +158,27 @@
 
           <div class="profile-info">
             <div>
-              <span class="meta-label">Email</span>
+              <span class="meta-label">
+                <i class="bi bi-envelope" aria-hidden="true"></i>
+                Email
+              </span>
               <strong id="profile-email">user@example.com</strong>
             </div>
             <div>
-              <span class="meta-label">Internet presence</span>
+              <span class="meta-label">
+                <i class="bi bi-wifi" aria-hidden="true"></i>
+                Internet presence
+              </span>
               <strong class="connection-status">
                 <span class="connection-dot" id="connection-dot" aria-hidden="true"></span>
                 <span id="connection-status" role="status" aria-live="polite">Checking…</span>
               </strong>
             </div>
             <div class="location-info">
-              <span class="meta-label">Location</span>
+              <span class="meta-label">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                Location
+              </span>
               <strong id="profile-location" role="status" aria-live="polite">Not shared</strong>
               <span
                 class="location-coordinates"
@@ -166,6 +186,7 @@
                 aria-live="polite"
               ></span>
               <button class="location-button" id="detect-location" type="button">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
                 Detect my location
               </button>
               <span class="location-note">
@@ -175,6 +196,7 @@
               <span class="location-attribution">
                 Location data ©
                 <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
+                  <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
                   OpenStreetMap contributors
                 </a>
               </span>
@@ -183,20 +205,22 @@
 
           <div class="stat-group">
             <div class="stat-box">
-              <span>Reviewed</span>
+              <span><i class="bi bi-check2-circle" aria-hidden="true"></i> Reviewed</span>
               <strong>18</strong>
             </div>
             <div class="stat-box">
-              <span>Pending</span>
+              <span><i class="bi bi-hourglass-split" aria-hidden="true"></i> Pending</span>
               <strong>5</strong>
             </div>
           </div>
 
           <div class="profile-actions">
             <button type="button" class="secondary-button" id="edit-profile">
+              <i class="bi bi-pencil-square" aria-hidden="true"></i>
               Edit profile
             </button>
             <button type="button" class="primary-button" id="view-reports">
+              <i class="bi bi-folder2-open" aria-hidden="true"></i>
               View reports
             </button>
           </div>
@@ -212,7 +236,7 @@
             <h2 id="profile-dialog-title">Edit profile</h2>
           </div>
           <button class="dialog-close" type="button" data-close-dialog aria-label="Close">
-            &times;
+            <i class="bi bi-x-lg" aria-hidden="true"></i>
           </button>
         </div>
         <label for="display-name">Display name</label>
@@ -230,8 +254,14 @@
         </p>
         <p class="dialog-feedback" id="profile-feedback" role="status" aria-live="polite"></p>
         <div class="dialog-actions">
-          <button class="secondary-button" type="button" data-close-dialog>Cancel</button>
-          <button class="primary-button" type="submit">Save profile</button>
+          <button class="secondary-button" type="button" data-close-dialog>
+            <i class="bi bi-x-circle" aria-hidden="true"></i>
+            Cancel
+          </button>
+          <button class="primary-button" type="submit">
+            <i class="bi bi-check2" aria-hidden="true"></i>
+            Save profile
+          </button>
         </div>
       </form>
     </dialog>
@@ -244,7 +274,7 @@
             <h2 id="reports-dialog-title">Report history</h2>
           </div>
           <button class="dialog-close" type="button" data-close-dialog aria-label="Close">
-            &times;
+            <i class="bi bi-x-lg" aria-hidden="true"></i>
           </button>
         </div>
         <p class="dialog-note">
@@ -258,9 +288,13 @@
         <p class="dialog-feedback" id="reports-feedback" role="status" aria-live="polite"></p>
         <div class="dialog-actions">
           <button class="secondary-button" id="clear-reports" type="button">
+            <i class="bi bi-trash3" aria-hidden="true"></i>
             Clear history
           </button>
-          <button class="primary-button" type="button" data-close-dialog>Done</button>
+          <button class="primary-button" type="button" data-close-dialog>
+            <i class="bi bi-check2" aria-hidden="true"></i>
+            Done
+          </button>
         </div>
       </section>
     </dialog>

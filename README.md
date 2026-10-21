@@ -18,6 +18,7 @@ location lookup.
 ├── js/
 │   ├── app.js
 │   ├── auth.js
+│   ├── preferences.js
 │   ├── register.js
 │   └── reviewer.js
 └── README.md
@@ -69,6 +70,8 @@ is no backend or email service, the app cannot send reports automatically.
   report history stored in their browser.
 - `js/preferences.js` provides the saved light/dark theme toggle and password
   visibility controls used on sign-in and registration.
+- The pages load Bootstrap Icons v1.11.3 from jsDelivr for small UI icons;
+  an internet connection is required for those icons to appear.
 - `css/styles.css` contains the responsive layout, regional color themes, and
   motion/accessibility styles.
 - `404.html` is the location-restriction page for users outside Cameroon.

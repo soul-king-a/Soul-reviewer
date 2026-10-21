@@ -57,6 +57,38 @@ html[data-theme="dark"] body {
   box-sizing: border-box;
 }
 
+.bi {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: -0.1em;
+}
+
+.panel-header h2 > .bi {
+  margin-right: 7px;
+}
+
+.location-attribution a .bi {
+  margin-right: 3px;
+  font-size: 0.9em;
+}
+
+.primary-button,
+.secondary-button,
+.theme-toggle,
+.sign-out-button,
+.location-button,
+.login-form button,
+.password-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.password-field > .password-toggle {
+  gap: 4px;
+}
+
 body {
   min-width: 100%;
   min-height: 100vh;
@@ -1000,6 +1032,10 @@ h1 {
   font: inherit;
   font-size: 22px;
   cursor: pointer;
+}
+
+.dialog-close .bi {
+  font-size: 16px;
 }
 
 .dialog-close:hover {

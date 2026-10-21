@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
     <title>404 · You seem lost</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/preferences.js"></script>
   </head>
   <body>
     <main class="login-page lost-page">
       <button class="theme-toggle page-theme-toggle" type="button" data-theme-toggle aria-pressed="false">
-        Dark mode
+        <i class="bi bi-moon-stars" aria-hidden="true"></i>
+        <span data-theme-label>Dark mode</span>
       </button>
       <a class="brand" href="./index.html" aria-label="Local Reviewer home">
         <span class="brand-mark" aria-hidden="true">R</span>
@@ -24,7 +30,10 @@
           Local Reviewer's regional sign-in is available in Cameroon. We
           couldn't find a Cameroon region for your location.
         </p>
-        <a class="primary-button lost-return" href="index.html">Try again</a>
+        <a class="primary-button lost-return" href="index.html">
+          <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+          Try again
+        </a>
       </section>
     </main>
   </body>

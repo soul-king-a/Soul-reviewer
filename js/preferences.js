@@ -7,7 +7,14 @@ function applyTheme(theme) {
   const isDark = theme === "dark";
   rootElement.dataset.theme = isDark ? "dark" : "light";
   document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
-    button.textContent = isDark ? "Light mode" : "Dark mode";
+    const label = button.querySelector("[data-theme-label]");
+    const icon = button.querySelector("i");
+    if (label) {
+      label.textContent = isDark ? "Light mode" : "Dark mode";
+    }
+    if (icon) {
+      icon.className = `bi ${isDark ? "bi-sun" : "bi-moon-stars"}`;
+    }
     button.setAttribute("aria-label", `Switch to ${isDark ? "light" : "dark"} mode`);
     button.setAttribute("aria-pressed", String(isDark));
   });
@@ -33,7 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       const isVisible = passwordInput.type === "text";
       passwordInput.type = isVisible ? "password" : "text";
-      button.textContent = isVisible ? "Show" : "Hide";
+      const label = button.querySelector("span");
+      const icon = button.querySelector("i");
+      if (label) {
+        label.textContent = isVisible ? "Show" : "Hide";
+      }
+      if (icon) {
+        icon.className = `bi ${isVisible ? "bi-eye" : "bi-eye-slash"}`;
+      }
       button.setAttribute("aria-label", `${isVisible ? "Show" : "Hide"} password`);
       button.setAttribute("aria-pressed", String(!isVisible));
     });
